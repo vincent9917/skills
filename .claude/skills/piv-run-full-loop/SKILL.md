@@ -34,7 +34,7 @@ Run the `piv-plan-implementation` skill (`.claude/skills/piv-plan-implementation
 
 Implement the feature from the plan document.
 
-Run the `piv-implement` skill (`.claude/skills/piv-implement/SKILL.md`) with the plan file path: `.claude/plans/[feature-name].md`.
+Run the `piv-implement` skill (`.claude/skills/piv-implement/SKILL.md`) with the plan file path: `docs/implementation-plan/[feature-name].md`.
 
 (Use the feature name from Step 2.)
 
@@ -60,12 +60,12 @@ After completing all 4 steps, provide:
 
 **Steps Executed:**
 1. ✅ Prime - Codebase context loaded
-2. ✅ Planning - Plan created at `.claude/plans/[feature-name].md`
+2. ✅ Planning - Plan created at `docs/implementation-plan/[feature-name].md`
 3. ✅ Execute - Feature implemented and validated
 4. ✅ Commit - Changes committed to git
 
 **Outputs:**
-- Plan document: `.claude/plans/[feature-name].md`
+- Plan document: `docs/implementation-plan/[feature-name].md`
 - Files created/modified: [list]
 - Tests added: [list]
 - Commit hash: [hash]

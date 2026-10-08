@@ -94,17 +94,16 @@ Reversible, low-cost calls → just decide and move on.
 
 ## The output: a high-level architecture decision doc
 
-Only after the calls are made. Pick where it lives. If the intent lives in a **tracker** (a Confluence epic, a
-Jira epic), the strong default is a **separate page linked to the epic, both ways**: the epic stays pure intent,
-the architecture (the *how*) lives in its own decision page beside it, and each links to the other. Keeping them
-as two clean, linked sources is what lets `piv-slice-epic` and `piv-plan-implementation` read intent and
-architecture separately later. The options:
+Only after the calls are made, write a standalone document to
+`docs/architecture/<kebab-slug>.architecture.md`, with the slug derived from the epic/product title or core idea.
+Resolve this path from the target repository root and create `docs/architecture/` if missing.
+Link the source PRD/epic and architecture document both ways so downstream skills can read intent and
+architecture separately.
 
-- **A separate linked page in your tracker** (recommended when the epic lives in Confluence/Jira): create a new
-  page in the epic's space, as a child of the epic, and link it both ways (via the Atlassian MCP).
-- **Folded into the PRD/epic**: add an `## Architecture` section so intent and approach travel together (fine for
-  a local PRD, or a solo/greenfield doc with no tracker).
-- **A standalone `architecture.md`**: a local repo doc when there's no tracker.
+Use another destination only when the user explicitly requests it: a different local path, an
+`## Architecture` section in the existing PRD/epic, or a separate tracker page linked to the epic both ways.
+For a requested Confluence/Jira destination, create the architecture page in the epic's space as a child
+of the epic via the relevant tool.
 
 Either way keep it high-level and fill this shape:
 

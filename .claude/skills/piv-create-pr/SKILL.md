@@ -40,7 +40,7 @@ git log origin/{base}..HEAD --oneline
   specifics live; this skill stays general.
 - Commits: `git log origin/{base}..HEAD --pretty=format:"- %s"`
 - Files: `git diff --stat origin/{base}..HEAD`
-- **Implementation report** (if `piv-implement` wrote one — `.claude/reports/<…>-report.md`): pull the summary,
+- **Implementation report** (if `piv-implement` wrote one — `docs/implementation-report/<…>-report.md`): pull the summary,
   validation results, and **documented deviations** (these belong in the PR body — they tell the reviewer what
   was intentional).
 - Linked ticket / issue: look for `ACC-…`, `#123`, `Fixes #…` in the commits/branch name.

@@ -83,7 +83,9 @@ For each changed file or new file, analyze for:
 
 ## Output Format
 
-Save a new file to `.claude/code-reviews/[appropriate-name].md`
+Resolve `docs/review-report/` from the target repository root and create it if missing.
+
+Save a new file to `docs/review-report/[appropriate-name].md`
 
 **Stats:**
 

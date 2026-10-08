@@ -92,9 +92,10 @@ over-invest feasibility and under-invest value — and value means wanting it *m
 
 ## Generate the PRD
 
-Write to an **idea-derived filename** so a second PRD never overwrites the first: **`<kebab-slug>.prd.md`**, where
-the slug comes from the epic/product title or the core idea (e.g. `pluggable-ingestion.prd.md`). Put it in `docs/`
-if that exists, else the repo root. (Only write to a literal path if the user passed one in `$ARGUMENTS`.)
+Write to an **idea-derived filename** so a second PRD never overwrites the first: **`docs/prd/<kebab-slug>.prd.md`**, where
+the slug comes from the epic/product title or the core idea (e.g. `docs/prd/pluggable-ingestion.prd.md`).
+Resolve this path from the target repository root and create `docs/prd/` if missing.
+Use a different local path only when the user explicitly provides one in `$ARGUMENTS`.
 **Never hardcode `PRD.md`.** **If the user names a tracker destination** (e.g. "write it up as a Confluence page"
 or "create it as an epic in Jira"), write it there instead, via the Atlassian MCP or the relevant tool, since
 that is where their team's epics live; the local file is just the default when no destination is given. Product

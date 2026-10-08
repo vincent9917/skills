@@ -89,7 +89,9 @@ Before completing:
 
 ## Output — write an implementation report
 
-Write a short report to `.claude/reports/<plan-slug>-report.md` (and print the summary). This is what the PR body
+Resolve `docs/implementation-report/` from the target repository root and create it if missing.
+
+Write a short report to `docs/implementation-report/<plan-slug>-report.md` (and print the summary). This is what the PR body
 and the `piv-review-pr` gate read — especially the **deviations** (a documented deviation is an *intentional*
 decision the reviewer should not flag):
 

@@ -29,7 +29,7 @@ State guard: `MERGED`/`CLOSED` → stop ("nothing to review"); `DRAFT` → revie
 ## Phase 2 — Load the context (so you review against the right bar)
 
 - **`CLAUDE.md`** + any `.claude/references/` — the project's standards are the review rubric.
-- **The implementation report** (if `piv-implement` wrote one — `.claude/reports/*{branch}*`) + its plan: read the
+- **The implementation report** (if `piv-implement` wrote one — `docs/implementation-report/<plan-slug>-report.md`; match the report's Plan and Branch fields to this PR) + its plan: read the
   **documented deviations**. A documented deviation is an *intentional decision*, **not** an issue — only flag
   *undocumented* divergences. (No report? Review normally and note its absence.)
 - The PR's own intent (title/body): what problem it claims to solve.
@@ -66,16 +66,18 @@ Acknowledge what's done well, too — review is constructive, not just a defect 
 
 ## Phase 6 — Post to GitHub + save the report
 
-Write the report to `.claude/code-reviews/pr-{N}-review.md` (summary · issues by severity with `file:line` + fix ·
+Resolve `docs/review-report/` from the target repository root and create it if missing.
+
+Write the report to `docs/review-report/pr-{N}-review.md` (summary · issues by severity with `file:line` + fix ·
 validation table · what's good · recommendation). Then post it:
 
 ```bash
 # approve
-gh pr review {N} --approve --body-file .claude/code-reviews/pr-{N}-review.md
+gh pr review {N} --approve --body-file docs/review-report/pr-{N}-review.md
 # request changes
-gh pr review {N} --request-changes --body-file .claude/code-reviews/pr-{N}-review.md
+gh pr review {N} --request-changes --body-file docs/review-report/pr-{N}-review.md
 # or just comment (draft PRs / advisory)
-gh pr comment {N} --body-file .claude/code-reviews/pr-{N}-review.md
+gh pr comment {N} --body-file docs/review-report/pr-{N}-review.md
 ```
 
 ## Output + hand off
