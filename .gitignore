@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
 .ablation/
+.idea
+.DS_Store
+.codegraph/

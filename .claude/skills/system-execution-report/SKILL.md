@@ -5,6 +5,15 @@ description: Generates a structured implementation report reflecting on a just-c
 
 # Execution Report
 
+## Artifact location — session workspace
+
+- Resolve `WORKSPACE_ROOT` to the absolute main project workspace root supplied by the current session environment. Exclude auxiliary visualization, cache, and tool directories. Do not substitute the shell's current directory, a nested Git repository, or the installed skill directory.
+- If a prior skill already resolved this root in the same session, reuse it. If the environment has no clear main workspace or has multiple ambiguous project roots, ask the user to identify it before writing artifacts.
+- Set `DOCS_ROOT` to `<WORKSPACE_ROOT>/docs`. Resolve it once per session and retain it across directory changes and skill handoffs. In a new session, derive it from that session's environment; never hardcode a machine-specific path in this skill.
+- All generated document paths below beginning with `docs/` are relative to `WORKSPACE_ROOT`. Use absolute paths for file operations, command arguments, and handoffs; create the required output subdirectory if missing. Honor explicitly supplied artifact paths and destinations, including existing inputs from another workspace.
+- Keep application code and Git commands in the target repository. The documentation directory may be outside that repository; only stage artifacts that are inside the repository being committed. Include the resolved artifact paths in the completion summary.
+
+
 Review and deeply analyze the implementation you just completed.
 
 ## Context
@@ -18,7 +27,7 @@ You have just finished implementing a feature. Before moving on, reflect on:
 
 ## Generate Report
 
-Save to: `.claude/execution-reports/[feature-name].md`
+Save to: `docs/implementation-report/[feature-name]-execution-report.md`
 
 ### Meta Information
 
